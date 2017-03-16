@@ -1,0 +1,14 @@
+Orielly Online Training (Safarionline.com)
+
+what is the difference between hopi nation and phoenix State (how daylight affects them- related to Java time library)
+
+Look at www.kousenit.com/java8
+
+The Basics:
+  1. The Streams
+  2. Lambdas
+  3. Method Interfaces
+
+Any interface with only one abstract method is called Funational Interface. The interface can also have an annotation
+named @FunctionalInterface to mark an interface as Functional Interface. The annotation is used to make sure the 
+interface details in javadoc. 

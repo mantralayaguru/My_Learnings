@@ -1,0 +1,43 @@
+Help: LearnCode.Academy channel on youtube for good videos by the Author Will Stern.
+
+Recommended Tools for the course:
+
+1. Linux or Windows 7+ 64 bit or OSX 10.8+
+2. Access to a computer infrastructure such as AWS or DigitalOcean or RackSpace etc.
+   AWS Free Tier is available
+   RackSpace Free Tier is available
+   DigitalOcean: DO10 $10 Credit
+
+Advantages of Docker Development Environment
+- isolated environment - All the config will be in the application container once docker is installed.
+- the environment will be identical to staging/qa/production (Solves "It works on my machine")
+- Only one virtual machine is required. Once docker is running any number of application containers can run within it. If you 
+  use vagrant, you have to create separate virtual machines for every individual project.
+
+Advantages of Docker in Production Environment
+- Immutable (disposable) infrastructure - Servers and containers are two immutable components.
+  Server is a dumb server and runs a docker. It is disposable.Once a container is deployed, you 
+  never change or update it.You only dispose it and deploy an newer container.
+  This is more affordable, because, everything you need to run an application is defined within
+  the continer and you can run that continer, any where the docker engine is installed. Whether it is 
+  on AWS or DigitalOcean or rackSpace etc. 
+- Portable infrastructure
+- Simple and rapid scaling
+- Applications can be decoupled from individual servers
+- Cost Savings
+
+MicroServices:
+Normally referred as Small Set of Services not larger than a Single page of code. Regardless of how small
+you break it up, micro services generally refers to the breaking up of the application into smaller/discrete 
+and separately deployable components. They normally communicate using http protocol and each service manages
+its own data. It helps in deciding or using different types of databases, based on type of data requirement 
+of the service.
+
+The Services can communicate using asynchronous messaging queues like Rabbit MQ or Kafka. Here there is much
+reduced coupling between services as they operate using asynchronous messaging with producer/consumer model.
+
+The advantage is you can scale the services/resources whereever it is required and messaging queue can load balance
+its subscribers or if http protocol is being used for messaging, the service can use a load balancer informally.
+
+Docker makes the deployment of the microServices more comfortable. 
+
