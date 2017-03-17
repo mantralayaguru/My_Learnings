@@ -1,0 +1,9 @@
+Local Development Workflow with docker
+ - Local Docker Container for development so that other developers in the team need not install anything 
+   other than docker to start with running the application.
+
+- Docker Tools is old and you should use either docker for mac or docker for Windows
+
+  (What do you mean sharing all files on machines as a volume within a docker container in real time?.
+   This helps with changes in files to be reflected on docker filesystem and all external dependencies
+   will be maintained within the docker container)

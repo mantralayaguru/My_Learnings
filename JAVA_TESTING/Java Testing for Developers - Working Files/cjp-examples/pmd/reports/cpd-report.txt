@@ -1,0 +1,12 @@
+Found a 8 line (39 tokens) duplication in the following files: 
+Starting at line 22 of /Users/ian/workspace/cjp-examples/pmd/src/main/java/examples/CopiedCodeExample.java
+Starting at line 45 of /Users/ian/workspace/cjp-examples/pmd/src/main/java/examples/CopiedCodeExample.java
+
+		StringBuffer sb = new StringBuffer();
+		sb.append(name);
+		sb.append(' ');
+		sb.append(address);
+		sb.append(' ');
+		sb.append(telephoneNumber);
+		return sb.toString();
+	}

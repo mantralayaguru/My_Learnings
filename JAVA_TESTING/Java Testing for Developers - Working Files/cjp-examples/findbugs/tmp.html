@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>.</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>88 lines of code analyzed,
+	in 5 classes, 
+	in 1 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">11.36</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">8</td>
+<td align="right">90.91</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>9</b>
+</td>
+<td align="right">
+<b>102.27</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">6</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>9</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65852');">
+<td>
+<span class="priority-2">Dm</span>
+</td>
+<td>examples.Action$1.actionPerformed(ActionEvent) invokes System.exit(...), which shuts down the entire virtual machine</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65852" style="display: none;">
+<a href="#DM_EXIT">Bug type DM_EXIT (click for details)</a>
+<br/>In class examples.Action$1<br/>In method examples.Action$1.actionPerformed(ActionEvent)<br/>At Action.java:[line 70]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65548');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference of Action.chooser in examples.Action.actionPerformed(ActionEvent)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65548" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br/>In class examples.Action<br/>In method examples.Action.actionPerformed(ActionEvent)<br/>Value contained in examples.Action.chooser<br/>Dereferenced at Action.java:[line 33]<br/>Known null at Action.java:[line 30]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65629');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Read of unwritten field theButton in examples.Action.thisShouldGiveWarning()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65629" style="display: none;">
+<a href="#NP_UNWRITTEN_FIELD">Bug type NP_UNWRITTEN_FIELD (click for details)</a>
+<br/>In class examples.Action<br/>In method examples.Action.thisShouldGiveWarning()<br/>Field examples.Action.theButton<br/>At Action.java:[line 67]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65906');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Non-null field message is not initialized by new examples.FBWarningsDemo()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65906" style="display: none;">
+<a href="#NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR">Bug type NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR (click for details)</a>
+<br/>In class examples.FBWarningsDemo<br/>In method new examples.FBWarningsDemo()<br/>Field examples.FBWarningsDemo.message<br/>At FBWarningsDemo.java:[line 7]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66041');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Return value of getGreeting() ignored in examples.FindBugsAnnotationExample.main(String[])</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66041" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED">Bug type RV_RETURN_VALUE_IGNORED (click for details)</a>
+<br/>In class examples.FindBugsAnnotationExample<br/>In method examples.FindBugsAnnotationExample.main(String[])<br/>Called method examples.FindBugsAnnotationExample.getGreeting()<br/>At FindBugsAnnotationExample.java:[line 17]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65750');">
+<td>
+<span class="priority-2">UwF</span>
+</td>
+<td>Unwritten field: examples.Action.fileName</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65750" style="display: none;">
+<a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
+<br/>In class examples.Action<br/>Field examples.Action.fileName<br/>At Action.java:[line 26]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65801');">
+<td>
+<span class="priority-2">UwF</span>
+</td>
+<td>Unwritten field: examples.Action.theButton</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65801" style="display: none;">
+<a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
+<br/>In class examples.Action<br/>Field examples.Action.theButton<br/>At Action.java:[line 67]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65974');">
+<td>
+<span class="priority-2">ST</span>
+</td>
+<td>Write to static field examples.FBWarningsDemo.MESSAGE2 from instance method examples.FBWarningsDemo.print()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65974" style="display: none;">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Bug type ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD (click for details)</a>
+<br/>In class examples.FBWarningsDemo<br/>In method examples.FBWarningsDemo.print()<br/>Field examples.FBWarningsDemo.MESSAGE2<br/>At FBWarningsDemo.java:[line 19]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65697');">
+<td>
+<span class="priority-1">UCF</span>
+</td>
+<td>Useless control flow to next line in examples.Action.actionPerformed(ActionEvent)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65697" style="display: none;">
+<a href="#UCF_USELESS_CONTROL_FLOW_NEXT_LINE">Bug type UCF_USELESS_CONTROL_FLOW_NEXT_LINE (click for details)</a>
+<br/>In class examples.Action<br/>In method examples.Action.actionPerformed(ActionEvent)<br/>At Action.java:[line 41]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_EXIT">DM_EXIT: Method invokes System.exit(...)</a>
+</h2>
+
+  <p> Invoking System.exit shuts down the entire Java virtual machine. This
+   should only been done when it is appropriate. Such calls make it
+   hard or impossible for your code to be invoked by other code.
+   Consider throwing a RuntimeException instead.</p>
+
+    
+<h2>
+<a name="NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR">NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR: Non-null field is not initialized</a>
+</h2>
+       
+       <p> The field is marked as non-null, but isn't written to by the constructor.
+    The field might be initialized elsewhere during constructor, or might always
+    be initialized before use.
+       </p>
+       
+       
+<h2>
+<a name="NP_NULL_ON_SOME_PATH">NP_NULL_ON_SOME_PATH: Possible null pointer dereference</a>
+</h2>
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    
+<h2>
+<a name="NP_UNWRITTEN_FIELD">NP_UNWRITTEN_FIELD: Read of unwritten field</a>
+</h2>
+
+  <p> The program is dereferencing a field that does not seem to ever have a non-null value written to it.
+Unless the field is initialized via some mechanism not seen by the analysis,
+dereferencing this value will generate a null pointer exception.
+</p>
+
+    
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED">RV_RETURN_VALUE_IGNORED: Method ignores return value</a>
+</h2>
+
+   <p> The return value of this method should be checked. One common
+cause of this warning is to invoke a method on an immutable object,
+thinking that it updates the object. For example, in the following code
+fragment,</p>
+<blockquote>
+<pre>
+String dateString = getHeaderField(name);
+dateString.trim();
+</pre>
+</blockquote>
+<p>the programmer seems to be thinking that the trim() method will update
+the String referenced by dateString. But since Strings are immutable, the trim()
+function returns a new String value, which is being ignored here. The code
+should be corrected to: </p>
+<blockquote>
+<pre>
+String dateString = getHeaderField(name);
+dateString = dateString.trim();
+</pre>
+</blockquote>
+
+    
+<h2>
+<a name="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method</a>
+</h2>
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    
+<h2>
+<a name="UCF_USELESS_CONTROL_FLOW_NEXT_LINE">UCF_USELESS_CONTROL_FLOW_NEXT_LINE: Useless control flow to next line</a>
+</h2>
+
+<p> This method contains a useless control flow statement in which control
+flow follows to the same or following line regardless of whether or not
+the branch is taken.
+Often, this is caused by inadvertently using an empty statement as the
+body of an <code>if</code> statement, e.g.:</p>
+<pre>
+    if (argv.length == 1);
+        System.out.println("Hello, " + argv[0]);
+</pre>
+
+    
+<h2>
+<a name="UWF_UNWRITTEN_FIELD">UWF_UNWRITTEN_FIELD: Unwritten field</a>
+</h2>
+
+  <p> This field is never written.&nbsp; All reads of it will return the default
+value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
+
+    </body>
+</html>

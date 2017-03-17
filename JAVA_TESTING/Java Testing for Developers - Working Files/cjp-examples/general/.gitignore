@@ -1,0 +1,4 @@
+.fbwarnings
+cpd-report.txt
+findbugs-ant-results.txt
+target

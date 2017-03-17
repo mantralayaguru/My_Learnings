@@ -1,0 +1,4 @@
+Docker is linux based, creates instances of environments, spin them up and use them.
+
+Inside Docker we have an image (OS image or Template), and instances created out of these 
+images is called as a container. Image is like a class and container is like an Object.

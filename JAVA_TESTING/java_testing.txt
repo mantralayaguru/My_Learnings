@@ -1,0 +1,20 @@
+Dynamic Testing:
+ - Junit, TDD, Mock, Persistence, BDD
+ - Spock - Based on Junit and easier to combine Persistence Testing and BDD
+ - Coverage - Code/Test Coverage
+ - Web Testing 
+
+Static Analysis:
+ - PMD - Reads Source Code
+ - Findbugs - Reads Comipled Code
+
+Look for bibliography: http://cjp.darwinsys.com/biblio.html
+
+Look for some of the tool details: cjp.darwinsys.com
+
+Junit:
+================
+
+
+ 
+

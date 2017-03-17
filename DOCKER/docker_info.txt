@@ -40,4 +40,8 @@ The advantage is you can scale the services/resources whereever it is required a
 its subscribers or if http protocol is being used for messaging, the service can use a load balancer informally.
 
 Docker makes the deployment of the microServices more comfortable. 
+===================================================================
 
+How to install docker: 
+
+Browse: https://get.docker.com and choose a suitable command to download the docker

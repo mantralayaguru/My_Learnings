@@ -1,0 +1,98 @@
+Ex:
+@Test
+public void testAppendSimple() {
+    StringBuilder sb = new StringBuilder("Hello");
+    sb.append(' ');
+    sb.append("World");
+    assertEquals("Test Append", "Hello World", sb.toString());
+}
+
+@Test @Ignore
+public void testSquareBad() {
+    assertEquals("Test SQRT", 1.414213562D, sqrt(2)); // This will fail
+    assertEquals("Test SQRT", 1.414213562D, sqrt(2), 0.00000001D); // This will pass as last value i.e epsilon will succeed
+}
+
+Junit Guidelines:
+- Class name should be xxxTest where xxx is the class we are testing.
+- Prefer @setup annotated methods over constructurs as it gives better control.
+- @Test annotated method names describe what we are testing ( oftern a method name + a condition)
+- Test methods should contain at most a small handful of assertions( 1 to 3, 5 in rare cases)
+- @Before annotated method runs just befor every @Test annotated method.
+- @After annotated method runs just after every @Test annotated method.
+- The tests are run by reflections so the order they run are unspecified. Dependencies among test cases are bad idea.
+- @BeforeClass and @AfterClass are run only once ...even before the @Before method or after @After method is run. Normally used for creating Factory methods. @BeforeClass and @AfterClass can be applied only to public and static methods.
+
+@Test(expected=IndexOutOfBoundException.class)
+public void StringBuilderChecksIndex() {
+    new StringBuilder().insert(-1, "Where does this go..?")
+}
+
+Using Parameters. (For loop should not be used to run bulk tests)
+
+BULK Testing:
+ - Annotate a class with @RunWith(Parameterized.class)
+ - Provide @Parameters annotated method
+ - Provide constructor that matches each row of params
+ - @Test methods use constructed fields.
+
+Ex:
+
+import static org.junit.Assert.assertSame;
+
+@RunWith(Parameterized.class)
+public class MemberValidatorEmailTest {
+    String email;
+    boolean expected;
+    StringHolder messageHolder = new StringHolder();
+
+    public memberValidatorEmailTest(boolean expected, String email) {
+        this.email = email;
+        this.expected = expected;
+    }
+
+    @Parameters
+    public static List<Object[]> getParams() {
+        return Arrays.asList(new Object[][] {
+           // Null or empty are valid for us, not for you...??
+           {true, null},
+           {true, ""},
+           // form short to long, roughly
+           {true, "a@b.co"},
+           {false, "a a b.co" },
+           {true, "a.b.c@d.e.f.com"},
+           {true, "ketchup@mcdonalds.infomaterials"},
+           {false, "a-b@c.com"},
+        });
+    }
+
+    @Test
+    public void test() {
+       System.out.println("Testing "+ email);
+       assertSame(expected, MemberValidator.validateEmail(email, messageHolder));
+    }
+}
+
+Assert Demo (Java Code and not Junit)
+
+package intro;
+public class AssertDemo {
+    public static double myFunction(double d, double e) {
+        System.out.printf("AssertDemo.myFunction(%f, %f)%n",d,e);
+
+        // pre-assertion
+        assert d < e : "First argument must be less than the Second";
+   
+        double result = 0;
+ 
+        // post-assertion
+        assert d >= 0 : "result becamd negative";
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+       myFunction(Math.PI, 123.456); // OK
+       myFunction(Math.PI, Math.PI); // violates pre-assertion
+    }
+}
