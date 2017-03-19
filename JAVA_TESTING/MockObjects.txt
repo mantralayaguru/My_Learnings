@@ -1,0 +1,16 @@
+Mocks are way to simulate some dependencies in testing java classes. The Unreal Objects are classified as below:
+
+1. Dummies - All methods dummied out. They just return default values for java types/objects. False for boolean,
+   0 for numbers, null for object references. Any good ide will generate if you implement methods of an interface 
+   or try to generate methods.
+2. Stubs - Some methods return known values. They are coded to return non default known values and can be used in
+   testing the code.
+3. Mocks - They are more smarter than dummy code and Stubs. They can do something useful and can have expectations.
+   They are objects that can stand in for another.
+4. Fakes - Fakes are Functional but not the live versions. For example, a local in memory copy of a database.They
+   are significantly faster. Can help avoiding putting test data into live database.
+
+Mockito.org provides an open source Framework for unit testing by means of Mocks.
+Jmockit is another framework for achieving the same and is packed with more features than Mockit.
+
+ 

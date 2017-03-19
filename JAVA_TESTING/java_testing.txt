@@ -14,7 +14,7 @@ Look for some of the tool details: cjp.darwinsys.com
 
 Junit:
 ================
-
+Details captured in file: JavaTesting.txt
 
  
 

@@ -1,0 +1,51 @@
+Junit can be extended by using hamcrest.
+You can write some readable tests using hamcrest matchers.
+Hamcrest is all about readability of test code and error messages.
+
+example:
+assertThat("Harrison", equalTo("Harrison"));
+
+Example of HamCrest:
+
+package examples.junit;
+
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.not;
+import static org.junit.Assert.assertThat;
+
+import org.junit.Test;
+
+public classHamcrestDemoTest {
+
+    @Test
+    public void showSimpleHamcrestWorking() {
+ 
+        assertThat("hello", equalTo("hello"));
+        assertThat("a b c", allOf(equalTo("a b c"),instanceOf(String.class),not(constraintString("x y z"))));
+    }
+}
+
+Example 2:
+
+package examples.junit;
+
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.not;
+import static org.junit.Assert.assertThat;
+
+import org.junit.Test;
+
+public class HamcrestCollectionsDemoTest {
+
+    @Test
+    public void showSimpleHamcrestWorking() {
+        List<String> data = Arrays.asList("One", "Two", "Three", "Four");
+        assertThat(data, hasItems("Two", "Four"));
+    }
+}

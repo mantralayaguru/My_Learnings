@@ -1,0 +1,25 @@
+The Sakila Sample database for learning mysql is available from the link:
+
+https://dev.mysql.com/doc/index-other.html
+
+The installation instructions are available from:
+https://dev.mysql.com/doc/sakila/en/sakila-installation.html
+
+
+Unzipping the downloaded Sakila Sample database will show three files:
+sakila-schema.sql - Schema
+sakila-data.sql   - data for the tables
+sakila.mwb        - For mysql work bench to view the tables/data
+
+Importing the schema into mysql is done using one of the following ways:
+
+Way 1: 
+$> mysql -u root -p < sakila-schema.sql
+$> mysql -u root -p < sakila-data.sql
+
+Way 2:
+$> mysql -u root -p
+Enter password:
+
+mysql> SOURCE /Users/mahesh.shet/MY_LEARNINGS/My_Learnings/MYSQL/sakila-db/sakila-schema.sql;
+mysql> SOURCE /Users/mahesh.shet/MY_LEARNINGS/My_Learnings/MYSQL/sakila-db/sakila-data.sql;
