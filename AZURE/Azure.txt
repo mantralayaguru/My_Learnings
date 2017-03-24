@@ -1,0 +1,47 @@
+CLoud:
+
+1. On Demand Self Service
+2. Resource Pooling
+3. Broad Network Access
+4. Elasticity
+5. Measured Service
+
+Types of Cloud Services
+- Software as a Service - No Need to install software, upgrade the software. Just consume the Service.
+  Example - Office 365, Dynamics CRM offered by Microsoft.
+
+- Pltaform as a Service. - If you need more control of services. For example Sequel Server is available for access,
+  configuration and running stored procedure, and platform. Ungrade of Sql server or OS is not the responsibility of  the user. Example: Azure Website and Azure SQL.
+
+- Infrastructure as a service. - U R not investing in hardware, rather provision the Virtual Machines on hardware
+  owned by the provider. You will not be bothered about power supply/battery/ups/OS upgrades/etc.
+  Example: Virtual Machines/ Virtual Networks
+
+Azure Data Centers:
+==================
+20+ Regions and Growing
+Multiple Data Centers per Region
+Internal Data Networks with transfer speeds over 30000GPS.
+High Speed Optical Networks between data centers
+Current Regins and Service offerings can be found at https://azure.microsoft.com/en-us/regions
+
+On the same link above we also find Service Offering by regions.
+
+Azure Service Overview:
+=======================
+Compute ==  Web App, Virtual Machine, Mobile Service, Cloud Service, Batch Service.
+Data Services == SQL Database, Storage, HDINSight, Recovery Srevices, Machine Learning, Stream Analytics
+AppServices == MEDIA SERVICE, SERVICE BUS, Mobile Engagemennt, Visual Studio Team Services, CDN, SCHEDULER, AUTOMATION etc.
+Network Services == Traffic Mananger/ Virtual Networks - VPN's
+Market place --- etc
+
+Azure Classic Portal ==> https://manage.windowsazure.com
+
+new Azure portal  ==> https://portal.azure.com
+
+Introduction To Powershell:
+===========================
+Azure Module for PowerShell - Manage Objects and Services in Azure. Requires .Net 4.5 as a pre-requisite
+Azure AD PowerShell Module  - Manage Users and Groups in Azure AD. Requires Microsoft Online Sign-in Assistant as a                               pre-requisite.
+
+

@@ -1,0 +1,28 @@
+Devops Author Blog: http://tech.mangot.com/
+
+Link: http://tech.mangot.com/
+
+What is Devops:
+===================
+Devops practices enabled organizations to ove faster without sacrificing reliability and stabiity. With devops one
+can === deploy 30 times more frequently and 200 times faster
+    === Experience 60% fewer service disruptions due to change failures
+    === Recover 168 times faster when they experience failure
+(Courtesy: https://puppetlabs.com/2015-devops-report-info)
+
+Devops is a collaboration between development, Operations and Other teams with the recognition that we are tasked with achieving common business goals.
+
+in IT it is Dev+Ops+Production
+
+Systems Thinking in DevOps
+==========================
+Moving from Dev (Business) to Customer through Systems as fast as possible. This thinks system as whole or global 
+and tells us about optimization System wide...with system as a whole. People do local optimization, but that will not help the down stream or up-stream systems in achiving the devops goals as a whole.
+
+The Outcome of making entire system as fast as possible are three:
+-- Never passing a known defect to downstream work centers. 
+-- Netver allowing a local optimization to create global degradation.
+-- Always seeking to increase flow. - This is done by Continuous Delivery. Every peice of software that is checked in is automatically put in a pipeline of testing (to test the quality of software checked in). This is where the software is thoroughly tested. The next step of Software Delivery is software deployment. Towards the end of delivery pipeline if the software is blessed for production (after successfull tests), the software is suitable for continuous deployment. This whole principle talks about high quality with High Speed, which in turn is a reason for high perfromance.
+
+Lead Time: Time from idea to Production.
+

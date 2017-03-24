@@ -1,0 +1,63 @@
+Static Testing refers to analysing the code without running it, by looking for code patterns, that indicate
+commonly found problems.
+
+for example defining variables and not using them, is a wastage of storage space. Similarly defining accessor methods 
+and not calling them is a wastage of storage space and hence code compilation time and un-used code.
+
+Example:
+
+Foo.java: Some input files use or override a deplrecated API.
+Foo.java: Recompile with -Xlint:deprecation for details.
+
+While compiling java code with javac, with -Xlint as a command line option, you will see lot of details for the 
+linter used.
+
+====================================================================== 
+Xlint argument        Meaning: Warn about
+====================================================================== 
+all/none              All warnings/ no warnings
+deprecation           Deprecated API's
+unchecked             Unchecked Type conversions
+fallthrough           Missing break/continue/return in switch
+path                  Missing/Unreadable CLASSPATH entries
+serial                Missing Serial Version Id
+finally               Finally clauses that don't complete properly
+====================================================================== 
+
+example: 
+javac Foo.java -Xlint deprecation,unchecked
+
+This will run java compiler with checks for deprecated code/api's and unchecked code.
+
+To Turn on all except for Serial, use the following ("-" dash before linter name):
+
+javac -Xlint:all,-serial *.java
+
+---------
+Every ide provide set of features to highlight errors and warnings.
+In Eclipse, under the Java Compiler->Error/Warnings section, the changes can be made to various
+error/warning conditions.
+
+Similarly the Java Code formating can be exported to a file and then each developer on the same
+project can import the code formatting rules to make sure every one uses the same coding style.
+
+=========
+PMD: 
+=========
+website: 
+https://pmd.github.io
+
+Download the pmd binary
+
+unzip the pmd binary and set the PMD_HOME env variable
+
+export PMD_HOME=~/pmd-bin-5.5.4
+
+Then run the PMD on the project you wish to like the following:
+
+${PMD_HOME}/bin/run.sh pmd -R java-basic,java-imports -f text -d src/main/java
+
+-R option is to provide the rule sets to be used for analysis. There are large set of rules and such
+rules are categorised in 30 different categories.
+
+-f is a formatter and can have values such as text, html, htmlsummary, xml...etc)
