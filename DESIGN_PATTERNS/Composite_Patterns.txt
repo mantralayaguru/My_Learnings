@@ -1,1 +1,0 @@
-Composite Pattern is one of the mostly used pattern in Java.
