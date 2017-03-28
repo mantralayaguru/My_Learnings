@@ -1,0 +1,46 @@
+Courtesy and Reference from:
+Author : Petter Graff
+         www.linkedin.com/pgraff
+         petter.graff@scispike.com
+         http://pettergraph.blogspot.com
+
+Link: https://www.safaribooksonline.com/library/view/design-patterns-in/9781771374040/video214986.html
+GOF - Gang Of Four
+
+(Look at App: SketchBook Pro...Not sure if it is free)
+
+What are design Patterns:
+========================
+A design pattern is a named solution to a problem in a context
+   - Reusable design knowledge
+   - Object Oriented.
+   - Named so that designers refer to it for proper usage.
+   - It is language Independent
+   - It should be domain independent.
+
+Patterns and Abstraction Levels
+   - Analysis Patterns - Pattrens used for analysis. Talks about Abstraction/use of Data Structures etc in business      process.
+   - Architectural Patterns - These are more of structures.Example MVC/Model View Presenter/Communication Leyer etc.
+   - Design Patterns
+   - Language Specific Patterns (Idioms)
+
+Domain Specific Patterns
+   - Enterprise Integration Patterns
+   - JEE Paterns - Ex: DTO - Data Transfer Object
+   - Game Programming Patterns
+   - Mobile Design Pattern
+   - SOA Patterns
+   - Patterns For Parallel Programming
+   - Search Patterns  
+
+Often architectures (or platforms) are built on a set of patterns.For Example: Java Spring Framework is built using:  - Proxy
+  - Adapter
+  - Singleton
+  - Facade
+  - Template Method
+
+
+DESIGN PATTERNS:
+===============
+1. Composite Patterns
+
