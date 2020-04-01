@@ -1,0 +1,71 @@
+
+Source Of the article: https://www.paladion.net/blogs/cookie-attributes-and-their-importance
+============================================================================================
+
+Cookies are pieces of information stored on the client side, which are sent to the server with every request made by 
+the client. Cookies are primarily used for authentication and maintaining sessions. Hence, securing a cookie effectively
+means securing a user's identity. Cookies can be secured by properly setting cookie attributes. These attributes are:
+
+1. Secure
+2. Domain
+3. Path
+4. HTTPOnly
+5. Expires
+
+Let us take a look at what these attributes signify and how they help in secure implementation of cookies.
+
+
+**Secure**
+==========
+Let us take a brief look at how a cookie can be stolen/misused, thus implying the importance of the 'Secure' attribute.
+
+One of the simplest and most common ways to steal data, including cookies, is sniffing. Sniffing can be defined as passively reading data that is being transmitted. In order to overcome this problem, we encrypt data before transmission. Encryption of data ensures that any potential attacker who sniffs traffic will not be able to steal clear text data, thus ensuring their safety.
+
+However, many applications encrypt only the login page and other sensitive pages. Other requests such as those for image files are sent to the server using non-encrypted communication. But as cookies are also transmitted along with these requests, an attacker sniffing on a network will be able to steal session information from these cookies. Also, some sites allow access over HTTP as well as HTTPS. In cases like these, it becomes important to make sure the cookie is transmitted only over HTTPS connections and not HTTP. This can be done with the help of the 'Secure' attribute of a cookie.
+
+The 'Secure' attribute makes sure that the cookie will only be sent with requests made over an encrypted connection and an attacker won't be able to steal cookies by sniffing. However, we need to be very careful while setting this attribute. Just setting the attribute to 'Secure' does not necessarily mean that the cookie will always be transmitted over an encrypted connection. RFC 2965 states, When it sends a "secure" cookie back to a server, the user agent SHOULD use no less than the same level of security as was used when it received the cookie from the server.
+
+If the response that is used to set the cookie and the 'Secure' attribute is via nonencrypted communication, then the browser can send cookies with requests made via nonencrypted communication as well. Hence, in order to make sure that the cookie is transmitted over an encrypted channel only, we must ensure that the response used to set the 'Secure' attribute is sent using an encrypted channel.
+
+**Domain and Path**
+===================
+The 'domain' attribute signifies the domain for which the cookie is valid and can be submitted with every request for this domain or its subdomains. If this attribute is not specified, then the hostname of the originating server is used as the default value.
+
+The 'path' attribute signifies the URL or path for which the cookie is valid. The default path attribute is set as '/'.
+
+Suppose we create a blog site e.g. blog.com and it allows users to register their blog names. On successful registration, you can either get a subdomain or a subfolder with the registered name. So, if I register a blog called 'cookiesecurity', I can either opt for cookiesecurity.blog.com or blog.com/cookiesecurity. In case an attacker has also registered on the same site with a blog name 'attacker', the options would be attacker.blog.com or blog.com/attacker.
+
+When a cookie is set for blog.com, it is also valid for its subdomains, i.e. cookiesecurity.blog.com & attacker.blog.com, as well as for its subfolders, i.e. blog.com/cookiesecurity & blog.com/attacker.
+
+Let us assume that I opt for the subdomain option and register my blog as cookiesecurity.blog.com. Since the cookie is set for blog.com, a cookie assigned to a user logged onto cookiesecurity.blog.com will also be sent along with requests for attacker.blog.com. An attacker can thus lure logged-in users to visit attacker.blog.com in order to harvest cookies of users belonging to other subdomains. Using the session information stored in these harvested cookies, sessions of other users can be hijacked. Thus, the 'domain' attribute should be set for all subdomains individually.
+
+In case I opt for a subfolder option, I would have a URL like blog.com/cookiesecurity. In this case, the attacker's URL might be blog.com/attacker and session information can be stolen in the same manner as described above. Since the cookie is set for blog.com, a cookie assigned to a user logged into blog.com/cookiesecurity will also be sent with requests for blog.com/attacker. The attacker can lure a logged-in user to visit his blog page and steal his cookie. He can then use the session information in this cookie to hijack the other user's session. However, even though all subfolders belong to the same domain, they host different entities and hence the 'path' attribute should be set appropriately.
+
+Thus, 'domain' and 'path' cookie attributes must be properly set in an environment where subdomains and subfolders host different applications.
+
+**HTTPOnly**
+============
+When this attribute is set, client-side scripts are not allowed to access the cookie. Now, the question that arises is, 'Why do I need to safeguard my cookies from client-side scripts?'
+
+The short answer: XSS
+
+The long answer: Cross Site Scripting attacks can be used to steal cookies with the help of client-side scripts.
+
+Restricting access to cookies by client-side scripts does not completely mitigate the risk of stealing cookies via XSS. However, it does raise the bar considerably and ensures that the most common XSS attack is mitigated, though not completely.
+
+**Expires**
+===========
+This attribute is used to set persistent cookies. It signifies how long the browser should use the persistent cookie and when the cookie should be deleted.
+
+If this attribute is not specified, then the lifetime of the cookie is the same as that of browser session, i.e. it will be a non-persistent cookie.
+
+How does this attribute affect security of cookies?
+
+The attribute itself is just used in order to set persistent cookies. But what is important is making sure that the persistent cookie does not contain any sensitive information. For example, if a persistent cookie is used to store details that authenticate a user on an application, an attacker who obtains access to this cookie may get authenticated on the application by submitting this cookie.
+
+Therefore, we must ensure that the 'Expires' attribute is not set for a cookie containing sensitive information.
+---------------------------------------------------------------------------------------------------------------
+
+We have now covered all cookie attributes. The best part of setting these attributes is that they are a one-time job, i.e. you set and forget. Once set, these attributes will safeguard our applications against a lot of common attacks.
+
+I hope this article was useful and will help you in implementing cookies in a secure manner. Signing off till next time…
